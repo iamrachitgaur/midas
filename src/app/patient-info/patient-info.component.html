@@ -1,18 +1,26 @@
 <div class="p-2">
     <div (click)="displayCard()">
-    <div class="d-flex align-items-center">
-        <div class="image">
-            <img width="100px" height="100px" class="bg-secondary rounded-circle" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="image">
-        </div>
-        <div class="text">
-            <div class="px-4">
-                <div>{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}</div>
-                <div>{{patient.age}} Years, {{patient.gender}}</div>
-                <div>{{patient.phoneNumber}}</div>
-                <div>{{patient.city}}, {{patient.state}}</div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <div class="d-flex align-items-center">
+                    <div class="image">
+                        <img width="100px" height="100px" class="bg-secondary rounded-circle" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="image">
+                    </div>
+                    <div class="text">
+                        <div class="px-4">
+                            <div>{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}</div>
+                            <div>{{patient.age}} Years, {{patient.gender}}</div>
+                            <div>{{patient.phoneNumber}}</div>
+                            <div>{{patient.city}}, {{patient.state}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-2 icon">
+                <i class="bi bi-box-arrow-up-right"></i>
             </div>
         </div>
-    </div>
+
 </div>
 </div>
 <div class="px-2">
