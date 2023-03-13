@@ -1,7 +1,8 @@
-<div class="p-2">
-    <div (click)="displayCard()">
+<div *ngIf="display == 0">
+<div class="container" >
+    <div class="py-2">
         <div class="d-flex justify-content-between align-items-center">
-            <div>
+            <div (click)="displayCard()">
                 <div class="d-flex align-items-center">
                     <div class="image">
                         <img width="100px" height="100px" class="bg-secondary rounded-circle" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="image">
@@ -16,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-2 icon">
+            <div class="px-2 icon"  (click)="editPatient()">
                 <i class="bi bi-box-arrow-up-right"></i>
             </div>
         </div>
@@ -26,10 +27,11 @@
 <div class="px-2">
     <hr>
 </div>
+</div>
 
-<div class="p-2" >
+<div class="container" >
 <div *ngIf="display == 0">
-<div class="grid">
+<div class="grid" *ngIf="cardDisplay == 0">
 
     <div class="p-2">
         <div class="card card-box">
@@ -92,9 +94,11 @@
                     </div>
         </div>
 </div>
-</div>
 
-<div *ngIf="display == 1">
+<div *ngIf="cardDisplay == 5">
+    <div>
+        + add
+    </div>
     <div class="d-flex justify-content-end">
         <div class="p-2 icon" (click)="listView()"><i class="bi bi-list-task"></i></div>
         <div class="p-2 icon" (click)="gridView()"><i class="bi bi-grid-3x3-gap-fill"></i></div>
@@ -126,6 +130,93 @@
         </div>
     </div>
     </div>
+</div>
+
+</div>
+
+<div *ngIf="display == 1">
+
+    <div>
+        <div class="py-3">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5">Update Patient</h1>
+            <button type="button" class="btn-close" aria-label="Close"  (click)="closePatientForm()"></button>
+          </div>
+        </div>
+
+        <form [formGroup]="updatePatientForm" (ngSubmit)="updatePatient()" autocomplete="off">
+        
+        <div class="py-3">
+          <div class="modal-body">
+            
+            <div class="mb-3">
+                <label for="name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="name" formControlName="firstName">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Middle Name</label>
+                <input type="text" class="form-control" id="name" formControlName="middleName">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="name" formControlName="lastName">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Age</label>
+                <input type="text" class="form-control" id="name" formControlName="age">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Gender</label>
+                <input type="text" class="form-control" id="name" formControlName="gender">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Moblie Number</label>
+                <input type="text" class="form-control" id="name" formControlName="mobileNumber">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Apartment</label>
+                <input type="text" class="form-control" id="name" formControlName="apartment">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Street</label>
+                <input type="text" class="form-control" id="name" formControlName="street">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">City</label>
+                <input type="text" class="form-control" id="name" formControlName="city">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">State</label>
+                <input type="text" class="form-control" id="name" formControlName="state">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Pincode</label>
+                <input type="text" class="form-control" id="name" formControlName="pincode">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nationality</label>
+                <input type="text" class="form-control" id="name" formControlName="nationality">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Profile Pic</label>
+                <input type="text" class="form-control" id="name" formControlName="profilepic">
+              </div>
+          </div>
+        </div>
+        
+        <div class="py-3">
+          <div class="modal-footer">
+              <div class="px-1">
+                  <button type="button" class="btn btn-secondary" (click)="closePatientForm()" >Close</button>
+                </div>
+              <div class="px-1">
+                <button type="submit" class="btn button">Add</button>
+              </div>
+          </div>
+        </div>
+    </form>
+    </div>
+
 </div>
 
 </div>

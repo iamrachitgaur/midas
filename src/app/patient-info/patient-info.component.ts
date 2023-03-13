@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import {AuthService} from '../service/auth.service'
 
 @Component({
@@ -12,14 +13,29 @@ export class PatientInfoComponent implements OnInit {
   patient:any = []
   selectedPatient:any
   display:Number = 0
-  constructor(private authService:AuthService) { }
+  cardDisplay:Number = 0
+  updatePatientForm:FormGroup
+  constructor(private authService:AuthService,private formBuilder:FormBuilder) { }
+
+  editPatient(){
+    this.display = 1
+  }
 
   displayCard(){
     this.display = 0
+    this.cardDisplay = 0
   }
 
   casePicture(){
-    this.display = 1
+    this.cardDisplay = 5
+  }
+
+  updatePatient(){
+    console.log(this.updatePatientForm)
+  }
+
+  closePatientForm(){
+    this.display = 0
   }
 
   gridView(){
@@ -42,12 +58,29 @@ export class PatientInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.display)
     this.authService.getPatientById(this.selectedPatient.patientId).subscribe(
       (patient:any)=>{
         this.patient = patient
         console.log(patient)
       }
     )
+
+      this.updatePatientForm = this.formBuilder.group({
+        firstName:[null,Validators.required],
+        middleName:[null],
+        lastName:[null,Validators.required],
+        age:[null,Validators.required],
+        gender:[null,Validators.required],
+        mobileNumber:[null,Validators.required],
+        apartment:[null,Validators.required],
+        street:[null,Validators.required],
+        city:[null,Validators.required],
+        state:[null,Validators.required],
+        pincode:[null,Validators.required],
+        nationality:[null,Validators.required],
+        profilepic:[null,Validators.required],
+        })
 
   }
 
