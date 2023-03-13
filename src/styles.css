@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --bs-bluevoilet: rgb(115, 36, 91);
+    --bs-lightbluevoilet: rgb(161, 4, 160);
+    --bs-boxshadow:rgba(50, 50, 93, 0.25) 0px 1px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+body{
+    font-family: 'Tahoma',sans-serif!important;
+}
+
+.card{
+    border: none !important;
+    box-shadow: var(--bs-boxshadow);
+}
+.button{
+    color: var(--bs-white) !important;
+    background-color: var(--bs-lightbluevoilet) !important;
+}

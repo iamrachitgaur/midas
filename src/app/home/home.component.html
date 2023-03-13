@@ -1,0 +1,3 @@
+
+<app-patients *ngIf="display == 0" (selectedPatient)="selectedPatient($event)"></app-patients>
+<app-patient-info *ngIf="display == 1" [selectedPatient]="Patient" ></app-patient-info>

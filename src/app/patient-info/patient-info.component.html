@@ -1,0 +1,123 @@
+<div class="p-2">
+    <div (click)="displayCard()">
+    <div class="d-flex align-items-center">
+        <div class="image">
+            <img width="100px" height="100px" class="bg-secondary rounded-circle" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="image">
+        </div>
+        <div class="text">
+            <div class="px-4">
+                <div>{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}</div>
+                <div>{{patient.age}} Years, {{patient.gender}}</div>
+                <div>{{patient.phoneNumber}}</div>
+                <div>{{patient.city}}, {{patient.state}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="px-2">
+    <hr>
+</div>
+
+<div class="p-2" >
+<div *ngIf="display == 0">
+<div class="grid">
+
+    <div class="p-2">
+        <div class="card card-box">
+            <div class="card-body d-flex justify-content-center align-items-center">
+                    <div>
+                        <div class="icon"><i class="bi bi-clipboard-plus-fill"></i></div>
+                        <div>Case Details</div>
+                    </div>
+            </div>
+        </div>
+        </div>
+    <div class="p-2">
+            <div class="card card-box">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                        <div>
+                            <div class="icon"><i class="bi bi-clock-history"></i></div>
+                            <div>Previous Case Details</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <div class="p-2">
+            <div class="card card-box">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                        <div>
+                            <div class="icon"><i class="bi bi-prescription"></i></div>
+                            <div>Prescription</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <div class="p-2">
+            <div class="card card-box">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                        <div>
+                            <div class="icon"><i class="bi bi-plus-square-fill"></i></div>
+                            <div>Medical History</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <div class="p-2">
+                <div class="card card-box" (click)="casePicture()">
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                            <div>
+                                <div class="icon"><i class="bi bi-image"></i></div>
+                                <div>Case Pictures</div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    <div class="p-2">
+                    <div class="card card-box">
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                                <div>
+                                    <div class="icon"><i class="bi bi-image"></i></div>
+                                    <div>Lab Reports</div>
+                                </div>
+                        </div>
+                    </div>
+        </div>
+</div>
+</div>
+
+<div *ngIf="display == 1">
+    <div class="d-flex justify-content-end">
+        <div class="p-2 icon" (click)="listView()"><i class="bi bi-list-task"></i></div>
+        <div class="p-2 icon" (click)="gridView()"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+    </div>
+    <div class="case-picture-view">
+        <div class="p-1">
+        <div class="p-1 card">
+            <div class="d-flex">
+            <img width="100px" height="80px" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="">
+            <div class="p-2 case-picture-text">
+               <div class="semi-bold">Title Name</div>
+                <div>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+               </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+        <div class="p-1">
+        <div class="p-1 card">
+            <div class="d-flex">
+            <img width="100px" height="80px" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="">
+            <div class="p-2 case-picture-text">
+            <div class="semi-bold">Title Name</div>
+            <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+</div>

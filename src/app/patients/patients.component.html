@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="p-3" *ngIf="display == 0">
+        <button class="btn btn-sm button" (click)="openPatientForm()">Add Patient</button>
+    </div>
+
+    <div *ngIf="display == 1">
+        
+        <div>
+            <div class="py-3">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Add Patient</h1>
+                <button type="button" class="btn-close" aria-label="Close"  (click)="closePatientForm()"></button>
+              </div>
+            </div>
+
+            <form [formGroup]="addPatientForm" (ngSubmit)="addPatient()" autocomplete="off">
+            
+            <div class="py-3">
+              <div class="modal-body">
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                  </div>
+
+                
+
+              </div>
+            </div>
+            
+            <div class="py-3">
+              <div class="modal-footer">
+                  <div class="px-1">
+                      <button type="button" class="btn btn-secondary" (click)="closePatientForm()" >Close</button>
+                    </div>
+                  <div class="px-1">
+                    <button type="submit" class="btn button">Add</button>
+                  </div>
+              </div>
+            </div>
+        </form>
+        </div>
+
+    </div>
+
+    <div class="py-4" *ngIf="display == 0">
+        <div class="py-1" *ngFor="let patient of patients" (click)="choosePatient(patient)">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                <div class="image">
+                    <img width="100px" src="https://iamrachitgaur.github.io/appianAPI/DRA%20docor1.png" alt="patient-image"/>
+                </div>
+                <div class="px-2 text">
+                    <div class="card-text">{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}</div>
+                    <div class="text-muted">Booked</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+</div>
