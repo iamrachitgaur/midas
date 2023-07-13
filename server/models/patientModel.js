@@ -1,0 +1,99 @@
+const mongoose = require('mongoose');
+const collectionName = 'patient';
+const schema = mongoose.Schema(
+    {
+
+        patientId:{
+            type:Number,
+            required:true,
+            unique:true,
+            default:1
+        },
+        clinicId:{
+            type:Number,
+            required:true,
+        },
+        firstName:{
+            type:String,
+            required:true
+        },
+        middleName:{
+            type:String,
+            default:' '
+        },
+        lastName:{
+            type:String,
+            required:true
+        },
+        age:{
+            type:Number,
+            required:true
+        },
+        gender:{
+            type:String,
+            required:true
+        },
+        mobileNumber:{
+            type:Number,
+            required:true,
+            minlength:10
+        },
+        bloodGroup:{
+            type:String,
+            required:true
+        },
+        apartment:{
+            type:String,
+            required:true
+        },
+        street:{
+            type:String,
+            required:true
+        },
+        city:{
+            type:String,
+            required:true
+        },
+        state:{
+            type:String,
+            required:true
+        },
+        pincode:{
+            type:Number,
+            required:true,
+            minlength:6
+        },
+        nationality:{
+            type:String,
+            required:true
+        },
+        profilePic:{
+            type:String,
+            required:true
+        },
+        createdBy:{
+            type:String,
+            required:true
+        },
+        createdDate:{
+            type:Date,
+            required:true,
+            default:Date.now()
+        },
+        updatedBy:{
+            type:String,
+            required:true
+        },
+        updatedDate:{
+            type:Date,
+            required:true,
+            default:Date.now()
+        }
+    },
+    {
+        timestamps:true
+    }
+)
+    
+const model = mongoose.model(collectionName,schema)
+module.exports = model
